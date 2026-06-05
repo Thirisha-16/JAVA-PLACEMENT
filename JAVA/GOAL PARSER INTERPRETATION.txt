@@ -1,0 +1,36 @@
+class Solution {
+   
+    public String interpret(String command) {
+       
+        return command.replace("()", "o").replace("(al)", "al");
+    }
+    
+    
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+       
+        String command1 = "G()(al)";
+        String output1 = solution.interpret(command1);
+        System.out.println("Input: command = \"" + command1 + "\"");
+        System.out.println("Output: \"" + output1 + "\"");
+        System.out.println("Expected: \"Goal\"");
+        System.out.println("Constraints: 1 <= command.length <= 100 ✓\n");
+        
+       
+        String command2 = "G()()()()(al)";
+        String output2 = solution.interpret(command2);
+        System.out.println("Input: command = \"" + command2 + "\"");
+        System.out.println("Output: \"" + output2 + "\"");
+        System.out.println("Expected: \"Gooooal\"");
+        System.out.println("Constraints: 1 <= command.length <= 100 ✓\n");
+        
+       
+        String command3 = "(al)G(al)()()G";
+        String output3 = solution.interpret(command3);
+        System.out.println("Input: command = \"" + command3 + "\"");
+        System.out.println("Output: \"" + output3 + "\"");
+        System.out.println("Expected: \"alGalooG\"");
+        System.out.println("Constraints: 1 <= command.length <= 100 ✓");
+    }
+}
